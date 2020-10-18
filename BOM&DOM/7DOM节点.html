@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 获取DOM的方法二 -->
+    <!-- <div class="box">
+        <div id="div1">1</div>
+        <div>2</div>
+        <div>3</div>
+    </div> -->
+
+
+    <!-- 获取父子节点 -->
+    <!-- <div id="box">
+        <span>1</span>
+        <span>2</span>
+        <div id="div1">hello</div>
+    </div> -->
+
+    <!-- 获取兄弟节点 -->
+    <div class="box">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <!-- 添加节点1 -->
+    <!-- <div id="box">
+        <div class="div2">世界</div>
+        <div class="div1">你好</div>
+    </div> -->
+
+    <!-- 添加节点2 -->
+    <!-- <div id="box">
+        <div class="div2">世界</div>
+        <div class="div1">你好</div>
+    </div>
+    <div id="box2"></div> -->
+
+    <!-- 添加节点3 -->
+    <!-- <ul class="box">
+        <li>1</li>
+    </ul>
+    <button id="btn">add</button> -->
+    <script>
+        // var oBox = document.querySelector(".box");
+        // var oId = document.querySelector("#div1");
+        // console.log(oBox);
+        // console.log(oId);
+        // var aBox = document.querySelectorAll(".box");
+        // console.log(aBox);
+
+
+        // var oBox = document.querySelector("#box");
+        // var oDiv = document.querySelector("#div1");
+        // console.log(oBox.childNodes);
+        // console.log(oBox.children);
+        // console.log(oDiv.parentElement);
+        // console.log(oDiv.parentNode);
+
+        var div3 = document.querySelector(".div3");
+        // console.log(div3.previousElementSibling);
+        console.log(div3.previousSibling);
+        // console.log(div3.nextElementSibling);
+        // console.log(div3.nextSibling);
+
+        // var oBox = document.getElementById("box");
+        // var div1 = document.querySelector(".div1");
+        // var oH1 = document.createElement("h1");
+        // oH1.innerText = "hello";
+        // oH1.style.color = "red";
+        // console.log(oH1);
+        // oBox.appendChild(oH1);
+        // oBox.insertBefore(oH1, div1);
+
+        // var oBox = document.getElementById("box");
+        // var oBox2 = document.getElementById("box2");
+        // var div1 = document.querySelector(".div1");
+        // var div2 = document.querySelector(".div2");
+        // // oBox2.appendChild(div2)
+        // var div2Clone = div2.cloneNode(true);
+        // oBox2.appendChild(div2Clone);
+
+
+        // var oBox = document.querySelector(".box");
+        // var oBtn = document.querySelector("#btn");
+        // var num = 1;
+        // oBtn.onclick = function () {
+        //     var oLi = document.createElement("li");
+        //     oLi.innerText = ++num;
+        //     oBox.appendChild(oLi);
+
+        //     var aLi = document.querySelectorAll("li");
+        //     for (var i = 0; i < aLi.length; i++) {
+        //         aLi[i].index = i;
+        //         aLi[i].onclick = function () {
+        //             console.log(this.index);
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

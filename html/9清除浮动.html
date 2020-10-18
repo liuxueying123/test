@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: brown;
+            float: left;
+        }
+        #div2{
+            width: 500px;
+            height: 200px;
+            background: chartreuse;
+            float: left;
+        }
+        h1{
+            height: 200px;
+            background: darkgoldenrod;
+        }
+        /* 父元素添加高度 */
+        /* #div0{
+            height: 200px;
+        } */
+        /* 父元素overflow:hidden */
+        /* #div0{
+            overflow: hidden;
+        } */
+        /* 浮动的元素下边添加一个元素  clear:both */
+        #div0::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div>
+    <h1></h1>
+</body>
+</html>

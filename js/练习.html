@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //随机生成两个小数给变量x.y，然后显示这两个数中的最大值
+        // var x = Math.random();
+        // var y = Math.random();
+        // console.log(x,y,x>y?x:y);
+
+
+
+        // 请编制一个页面，该页面显示当天是否处于闰年
+        // var timer = new Date();
+        // var year = timer.getFullYear();
+        // if((year%4==0 && year%100!=0) || (year%400==0)){
+        //     console.log("当前为闰年");
+        // }else{
+        //     console.log("当前不是闰年");
+        // }
+
+
+        // 1.编写程序．通过用户输入的年龄判断是哪个年龄段的人
+        // （儿童：年龄＜14；青少年：14<=年龄＜24；
+        // 青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60）
+        // 并在页面上输出判断结果。
+        // var age = window.prompt("请输入您的年龄");
+        // if(age<14){
+        //     console.log("儿童");
+        // }else if(age>=14 && age<24){
+        //     console.log("青少年");
+        // }else if(age>24 && age<40){
+        //     console.log("青年");
+        // }else if(age>=40 && age<60){
+        //     console.log("中年");
+        // }else{
+        //     console.log("老年");
+        // }
+
+
+        // 编写程序，根据用户输入的一个数字(0~6)．
+        // 通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)
+        // var date = window.prompt("请输入数字");
+        // switch(date){
+        //     case '0' :console.log("星期日");break;
+        //     case '1' :console.log("星期一");break;
+        //     case '2' :console.log("星期二");break;
+        //     case '3' :console.log("星期三");break;
+        //     case '4' :console.log("星期四");break;
+        //     case '5' :console.log("星期五");break;
+        //     case '6' :console.log("星期六");break;
+
+        // }
+
+
+        // 编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+        // var sum = 1;
+        // for(var i=1;i<=10;i++){
+        //     sum *= i;
+        // }
+        // console.log(sum);
+
+        // 编写程序，计算 1!+2!+3!+…..＋10！的结果。
+        // var sum = 0;
+        // var jc = 1;
+        // for(var i=1;i<=10;i++){
+        //     jc *= i;
+        //     sum += jc;
+        // }
+        // console.log(sum);
+
+
+        // 在页面上输出如下数字图案。
+        // 1
+        // 1 2
+        // 1 2 3
+        // 1 2 3 4
+        // 1 2 3 4 5
+        // for(var i=1;i<=5;i++){
+        //     for(var j=1;j<=i;j++){
+        //         document.write(j);
+        //         document.write("&nbsp")
+        //     }
+        //     document.write("<br\>")
+        // }
+
+        // 6.在页面上输出如下图案。
+        // var num = 4;
+        // for (var i = 1; i <= 5; i++) {
+        //     for (var k = 1; k <= num; k++)
+        //         document.write("&nbsp")
+        //     for (var j = 1; j <= i; j++) {
+        //         document.write("*");
+        //         document.write("&nbsp")
+        //     }
+        //     num -= 1;
+        //     document.write("<br\>");
+        // }
+
+        // 7.有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
+        // for (var i = 100; i <= 999; i++) {
+        //     if (i % 4 == 2 && i % 7 == 3 && i % 9 == 5) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // 求所有满足条件的四位数ABCD，它是13的倍数，
+        // 且第3位数加上第2位数等于第4位数（即：A=B+C）。
+        // for (var i = 1000; i <= 9999; i++) {
+        //     var x = Math.floor((i % 1000) / 100);
+        //     var y = Math.floor((i % 100) / 10);
+        //     var z = Math.floor(i / 1000);
+        //     if (i % 13 == 0 && x + y == z) {
+        //         console.log(i);
+        //     }
+        // }
+
+
+        // 编写一个函数 f(x) = 4x^2+3x+2，使用户通过提示对话框输入x的值，能得到相应的计算结果。
+        // function foo(x){
+        //     return 4*x*x+3*x+2
+        // }
+        // var x = foo(2);
+        // console.log(x);
+
+        // 3.编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，
+        // 然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，并要求每行显示6个这样的数。
+        // var arr = [];
+        // for(var i=1;i<=1000;i++){
+        //     if(i%3==0 && i%5==0 && i%7==0){
+        //         arr.push(i);
+        //     }
+        // }
+        // for(var j=0;j<arr.length;j++){
+        //     document.write(arr[j]);
+        //     document.write("&nbsp");
+        //     if((j+1)%6==0){
+        //         document.write("<br\>")
+        //     }
+        // }
+
+        // 9.利用全局变量和函数，设计模拟幸运数字机游戏。设幸运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）的随机数，
+        // 当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率。
+        // var isGoOn = true;
+        // var win = 0;
+        // var count = 0;
+        // while (isGoOn) {
+        //     count++;
+        //     var a = Math.floor(Math.random() * 8) + 1;//先取得0-8 然后+1 得到1-9
+        //     var b = Math.floor(Math.random() * 8) + 1;
+        //     var c = Math.floor(Math.random() * 8) + 1;
+        //     if (a == 8 || b == 8 || c == 8) {
+        //         win++
+        //     }
+        //     isGoOn = window.confirm("是否继续？");
+        //     console.log(win / count);
+        
+    </script>
+</body>
+
+</html>

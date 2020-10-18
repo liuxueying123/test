@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器</title>
+    <style>
+        /* id选择器 */
+        /* #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        } */
+        /* 类选择器 */
+        /* .list{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        } */
+        /* 后代选择器 */
+        /* ul .list{
+            width: 200px;
+            height: 200px;
+            background: orange;
+            border: 1px solid blueviolet;
+        } */
+        /* 子代选择器 */
+        ul > .list{
+            width: 200px;
+            height: 200px;
+            background: orange;
+            border: 1px solid blueviolet;
+        }
+        a:hover{
+            background:burlywood;
+            color: chartreuse;
+        }
+        /* 分组选择器 */
+        #div1,.list{
+            color:red;
+        }
+        /* 选择器优先级
+                !important
+                内联样式
+                id选择器
+                class类选择器 伪类选择器
+                标签
+         */
+        h2{
+            background:pink !important;
+        }
+        #myH2{
+            background-color: royalblue;
+        }
+        a.span{
+            background-color: salmon;
+            border: 1px solid firebrick;
+        }
+        #b{
+            background: gold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="div1">div1</div>
+        <div class="list">div2</div>
+        <div>div3</div>
+    </div>
+    <ul>
+        <li class="list">111</li>
+        <li class="list">222</li>
+        <li class="list">
+            <div>刘雪影</div>
+            <div class="list">小仙女</div>
+        </li>
+    </ul>
+    <a href="http://baidu.com">百度</a>
+
+    <h2 id="myH2">H2</h2>
+    <h3 class="a">
+        <span id="b">嘻嘻嘻</span>
+    </h3>
+</body>
+</html>

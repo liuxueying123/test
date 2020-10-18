@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2,3,4,6,3,2,2,2];
+        // Set类似于数组，但是成员的值都是唯一的 ->数组去重
+        // let s1 = new Set(arr);
+        // s1.add(1);
+        // s1.add(2);
+        // s1.delete(1);
+        // console.log(s1.has(3));
+        // console.log(s1);
+
+        // 数组去重
+        function fn(arr){
+            let obj = {};//标识是否有属性
+            let result = [];//存储不重复的元素
+            for(let i =0;i<arr.length;i++){
+                let val = arr[i];
+                if(obj[val]){
+                    obj[val] = obj[val]+1;//记录出现的次数
+                }else{
+                    obj[val]=1;
+                    result.push(val);
+                }
+            }
+            console.log(obj);
+            return result;
+        }
+        console.log(fn(arr1));
+
+        let s1 = new Set(arr1);//类数组（与数组相似，但不是数组）
+        let arr2 = [...s1];//...转换为数组
+        console.log(arr2);
+
+        for(let item of s1.keys()){
+            console.log(item);
+        }
+        for(let item of s1.values()){
+            console.log(item);
+        }
+        for(let item of s1.entries()){
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

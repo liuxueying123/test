@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name:'zs',
+            age:18,
+            // say:function(){
+            //     console.log('我是'+this.name);
+            // }
+            // 对象简写的方式
+            say(){
+                console.log('我是'+this.name);
+            }
+        }
+        obj.say();
+        //动态属性
+
+        let obj1 = {
+            name:'lisi',
+            age:20,
+            school:'黑大'
+        }
+        let obj2 = {
+            name:'wangwu',
+            age:20,
+            school:'黑大'
+        }
+        console.log({...obj1,...obj2});
+        // 合并
+        console.log(Object.assign(obj1,obj2));
+
+        for(key in obj2){
+            console.log(key,obj2[key]);
+        }
+        console.log(Object.keys(obj2));
+        console.log(Object.values(obj));
+        console.log(Object.entries(obj2));
+    </script>
+</body>
+</html>

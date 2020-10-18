@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 50px;
+            border-radius: 15px;
+            border: 1px solid black;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+
+        .bg {
+            height: 50px;
+            width: 0px;
+            background-color: pink;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bg">0%</div>
+    </div>
+    <button class="btn">开始</button>
+    <script>
+        var oBtn = document.getElementsByClassName("btn")[0];
+        var oBg = document.getElementsByClassName("bg")[0];
+        // 方法一
+        // oBtn.onclick = function () {
+        //     var num = 0;
+        //     var timer = setInterval(function(){
+        //         if(oBg.offsetWidth < 400){
+        //             oBg.style.width = (oBg.offsetWidth + 4) + "px";
+        //             oBg.innerText = (++num) + "%";
+        //         }else{
+        //             clearInterval(timer);
+        //         }
+        //     },16)
+        // }
+
+        // 方法二
+        oBtn.onclick = run;
+        var num = 0;
+        function run(){
+            if(oBg.offsetWidth < 400){
+                oBg.style.width = (oBg.offsetWidth + 4) + "px";
+                oBg.innerText = (++num) + "%";
+                requestAnimationFrame(run);
+            }
+        }
+    </script>
+</body>
+
+</html>
