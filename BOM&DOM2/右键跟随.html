@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background: pink;
+            height:200px;
+            width: 150px;
+            display: none;
+            position: fixed;
+        }
+        #menu{
+            padding-left: 0;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul id="menu">
+            <li>菜单链接一</li>
+            <li>菜单链接二</li>
+            <li>菜单链接三</li>
+        </ul>
+    </div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        document.oncontextmenu = function(event){
+            oBox.style.display = "block";
+            var x = event.clientX;
+            var y = event.clientY;
+            oBox.style.display = "block";
+            oBox.style.top = y + "px";
+            oBox.style.left = x + "px";
+            event.preventDefault();
+        }
+    </script>
+</body>
+</html>

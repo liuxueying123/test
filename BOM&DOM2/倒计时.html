@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 400px;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 1px 1px 5px yellow;
+            background: pink;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            position: fixed;
+            margin-left: -200px;
+            margin-top: -200px;
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+
+        #btn {
+            background-color: teal;
+            border: 0;
+            color: yellow;
+            outline: none;
+            padding: 20px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 id="text">100</h1>
+        <button id="btn">开始</button>
+    </div>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oText = document.getElementById("text");
+        var num = 100;
+        var timer = null;
+        var isRun = true;
+        oBtn.onclick = function () {
+            if (isRun) {
+                timer = setInterval(function () {
+                    if (num > 0) {
+                        oBtn.innerText = "暂停";
+                        oText.innerText = --num;
+                    } else {
+                        oBtn.innerText = "结束";
+                        clearInterval(Timer);
+                    }
+                }, 1000);
+            } else {
+                oBtn.innerText = "开始";
+                clearInterval(timer);
+            }
+            isRun = !isRun;
+        }
+    </script>
+</body>
+
+</html>
