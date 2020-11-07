@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 只执行一次，不循环
+        // setTimeout(function(){
+        //     console.log("hello world!");
+        // },2000)
+        // clearTimeout停止
+
+        // 每隔1秒钟出现一次，即循环
+        // setInterval(function(){
+        //     console.log("hello world!");
+        // },1000);
+
+        var i = 0;
+        var timer = setInterval(function(){
+            console.log(i++);
+            if(i==6){
+                clearInterval(timer);
+            }
+        },1000);
+        console.log(timer);
+        //clearInterval()传入参数，停止参数所对应的setInterval
+    </script>
+</body>
+</html>
