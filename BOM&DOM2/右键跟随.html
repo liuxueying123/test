@@ -29,8 +29,9 @@
         </ul>
     </div>
     <script>
+        var oDom = document.documentElement;
         var oBox = document.getElementsByClassName("box")[0];
-        document.oncontextmenu = function(event){
+        oDom.oncontextmenu = function(event){
             oBox.style.display = "block";
             var x = event.clientX;
             var y = event.clientY;
