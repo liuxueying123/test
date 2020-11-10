@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* 只影响3D，1000代表距离视图的距离 */
+            perspective: 1000px;
+            /* 定义在x轴(left)与y轴(bottom)上的位置 */
+            /* perspective要与perspective-origin一起使用 */
+             perspective-origin: 10% 20%;
+        }
+        .box{
+            height: 400px;
+            width: 400px;
+            margin: 100px auto;
+            border: 2px dashed yellow;
+            /* 沿Y轴3D旋转 */
+            transform: rotateY(45deg);
+
+        }
+        .div1{
+            height: 400px;
+            width: 400px;
+            background-color: violet;
+        }
+        .div2{
+            height: 400px;
+            width: 400px;
+            background-color: pink;
+            /* 对z轴进行过渡 */
+            transform: translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="div1">
+            hello world
+            <div class="div2">hello</div>
+        </div>
+    </div>
+</body>
+</html>

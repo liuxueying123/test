@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: pink;
+            /* animation: foo 3s ease; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* 规定需要绑定到选择器的 keyframe 名称 */
+            animation-name: foo;
+            /* 规定时长 */
+            animation-duration: 3s;
+            /* 规定动画的速度曲线。 */
+            animation-timing-function: ease;
+            /* 规定在动画开始之前的延迟。 */
+            animation-delay: 1s;
+            /* 规定动画应该播放的次数。 */
+            /* animation-iteration-count: infinite; */
+            /* 规定是否应该轮流反向播放动画 */
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes foo {
+            0% {
+                top: 0;
+                left: 0;
+            }
+
+            20% {
+                top: 200px;
+                left: 200px;
+            }
+
+            50% {
+                top: 20px;
+                left: 300px;
+            }
+
+            70% {
+                top: 160px;
+                left: 400px;
+            }
+
+            100% {
+                top: 10px;
+                left: 500px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

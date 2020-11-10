@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+      width: 400px;
+      height: 50px;
+      background-color: red;
+      /* transition是
+      transition-property
+       transition-duration
+       transition-timing-function
+       transition-delay的简写形式，与四个属性所带来的的效果相同
+       */
+      /* transition: width 1s ease; */
+
+
+      /* 所过渡的效果的名称 */
+      transition-property: width; 
+      /* 过渡所需时间 */
+      transition-duration: 1s;
+      /* 过渡速度效果的速度曲线 */
+      transition-timing-function: ease;
+      /* 过渡效果开始时间 */
+      transition-delay: 1s;
+    }
+    .box:hover{
+      width: 600px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
