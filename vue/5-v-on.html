@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            height: 400px;
+            width: 400px;
+            background: blue;
+        }
+        .div2{
+            height: 200px;
+            width: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{count}}</h2>
+        <!-- v-on:click与@click等价 -->
+        <button v-on:click="add(3)">click</button>
+        <button v-on:click="add(5)">click</button>
+
+        <div class="div1" @click="f1">
+            <!-- 事件修饰符 -->
+            <div class="div2" @click.stop="f2"></div>
+        </div>
+        <a href="http://www.baidu.com" @click.prevent="fn">百度</a>
+        <input v-on:keyup.enter="f3"/>
+        <div id="div5" @click="f5('div5',$event)">555555</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                count:0
+            },
+            methods:{
+                add(num){
+                    this.count+=num;
+                },
+                f1(){
+                    console.log("小蓝");
+                },
+                f2(){
+                    console.log("小粉");
+                },
+                fn(){
+                    console.log("ok");
+                },
+                f3(){
+                    console.log("enter");
+                },
+                f5(val,event){
+                    console.log(val,event.target);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

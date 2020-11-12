@@ -7,26 +7,18 @@
 </head>
 <body>
     <div id="app">
-        <h2 @click = "change">
-            {{msg}}
-        </h2>
+        <h2>{{msg}}</h2>
+        <h2 v-html="msg"></h2>
+        <h2 v-text="msg"></h2>
     </div>
     <script src="vue.js"></script>
     <script>
-        let vm = new Vue({
-            // 挂载元素
+        new Vue({
             el:"#app",
-            //数据
             data:{
-                msg:"hello"
-            },
-            methods:{
-                change(){
-                    this.msg = "哈哈哈哈"
-                }
+                msg:"<a href='#'>hello world</a>"
             }
         })
-        console.log(vm.msg);
     </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink{
+            background: pink;
+        }
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind动态绑定属性 -->
+        <div v-bind:id="myId"></div>
+        <div v-bind:class="{pink:isPink,blue:true}" @click="toggle">hahaha</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                myId:"div2",
+                isPink:true
+            },
+            methods:{
+                toggle(){
+                    this.isPink = !this.isPink;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

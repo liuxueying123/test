@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2 v-if="isRun">hahaha</h2>
+        <h2 v-else>heiheihei</h2>
+
+        <p v-if="letter=='a'">a</p>
+        <p v-else-if="letter=='b'">b</p>
+        <p v-else-if="letter=='c'">c</p>
+
+        <h2 v-show="isShow">你好</h2>
+        <!-- 
+            v-if v-show都是控制元素是否显示 
+            v-if 没有元素  
+            v-show 元素在 display:none 控制显示|隐藏 （频繁显示隐藏）
+         -->
+         <button @click="change">click</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isRun:false, //true显示hahaha false显示heiheihei
+                letter:"b", //a,b,c
+                isShow:false //true显示false隐藏
+            },
+            methods:{
+                change(){
+                    this.letter = "c";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
