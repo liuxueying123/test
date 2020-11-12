@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="textName">
+        <button @click="add">add</button>
+        <ul>
+            <li v-for="(obj,index) in list" @click="change(obj)" key="obj.name" :class="{pink:obj.isPink}">{{obj.name}}
+                <button @click="del(index)">del</button></li>
+        </ul>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {name:"苹果",isPink:false},
+                    {name:"香蕉",isPink:false}
+                ],
+                textName:"",
+                isPink:false
+                
+            },
+            methods:{
+                add(){
+                    this.list.push({name:this.textName,isPink:false}),
+                    this.textName=""
+                },
+                change(obj){
+                    obj.isPink = !obj.isPink
+                },
+                del(index){
+                    this.list.splice(index,1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -17,7 +17,12 @@
     <div id="app">
         <!-- v-bind动态绑定属性 -->
         <div v-bind:id="myId"></div>
+        <!-- 动态绑定class -->
         <div v-bind:class="{pink:isPink,blue:true}" @click="toggle">hahaha</div>
+        <!-- v-bind简写:-->
+        <!-- 动态绑定style -->
+        <!-- <div style="width: 100px;height: 100px;background: pink;">hahaha</div> -->
+        <div :style="isStyle">哈哈哈</div>
     </div>
     <script src="vue.js"></script>
     <script>
@@ -25,7 +30,12 @@
             el:"#app",
             data:{
                 myId:"div2",
-                isPink:true
+                isPink:true,
+                isStyle:{
+                    height:'100px',
+                    width:'100px',
+                    background:'yellow'
+                }
             },
             methods:{
                 toggle(){
