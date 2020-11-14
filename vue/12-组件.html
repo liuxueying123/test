@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <my-components name="jackson" content="handsome"></my-components>
+        <my-components name="mary" content="beautiful"></my-components>
+    </div>
+    <template id="temp">
+        <div>
+            <h2>{{name}} {{count}}</h2>
+            <p>{{content}}</p>
+            <button @click="add()">++</button>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        /**
+            父组件->调用子组件 传参->props
+
+            子组件 ->父组件传值  $emit(xx,'要向父组件传递的值')
+        */
+        new Vue({
+            el: "#app",
+            components: {
+                'my-components': {
+                    template: "#temp",
+                    props: {
+                        name: {
+                            type: String,//类型
+                            default: "xixixi"//默认值
+                        },
+                        content: String
+                    },
+                    data() {
+                        return {
+                            count: 0
+                        }
+                    },
+                    methods: {
+                        add() {
+                            this.count++;
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
