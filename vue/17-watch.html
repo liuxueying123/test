@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{count}}</h2>
+        <button @click="count++">add</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                count:0
+            },
+            watch:{
+                count:function(oldVal,newVal){
+                    console.log(oldVal,newVal);
+                }
+            }
+            // let vm = new Vue({})时，vm.$watch()调用
+        })
+    </script>
+</body>
+</html>
