@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+       {{msg}}
+       <h2 id="count">{{count}}</h2>
+       <button @click="add">click</button>
+       <button @click="destroy()">销毁</button>
+   </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:'hello',
+                count:0
+            },
+            beforeCreate(){
+                console.log('beforecreate',this.$data,this.$el);
+
+            },
+            created(){
+                console.log('created',this.$data,this.$el);
+            },
+            beforeMount(){
+                console.log('beforeMount',this.$data,this.$el);
+            },
+            mounted(){
+                console.log('mounted',this.$data,this.$el);
+            },
+            beforeUpdate(){
+                console.log('beforeUpdate',document.getElementById("count").innerHTML);
+            },
+            updated(){
+                console.log('updated',document.getElementById("count").innerHTML);
+            },
+            beforeDestroy(){
+                console.log('beforedestroy');
+            },
+            destroyed(){
+                console.log('destroyed');
+            },
+            methods:{
+                add(){
+                    this.count++;
+                },
+                destroy(){
+                    this.$destroy();
+                }
+            }
+        })
+    </script>
+</body>
+</html>
