@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <my-components name="jackson" content="handsome"></my-components>
-        <my-components name="mary" content="beautiful"></my-components>
+        <my-components name="mary" content="beautiful" @xx="fn"></my-components>
     </div>
     <template id="temp">
         <div>
@@ -46,8 +46,14 @@
                     methods: {
                         add() {
                             this.count++;
+                            this.$emit('xx','love');
                         }
                     }
+                }
+            },
+            methods:{
+                fn(val){
+                    console.log(val);
                 }
             }
         })
