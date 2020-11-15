@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dialog-mask {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .5);
+        }
+
+        .dialog-box {
+            text-align: center;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -150px;
+            background: #fff;
+        }
+
+        .close {
+            float: right;
+        }
+
+        .dialog-title {
+            border-bottom: 2px solid #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="login">login</button>
+        <my-dialog title="登录" v-show="isShow" @close="fn">
+            <div slot="slot1">
+                <div>
+                    <label for="name">用户名</label>
+                    <input id="name" type="text" />
+                </div>
+                <div>
+                    <label for="name">密码</label>
+                    <input id="name" type="text" />
+                </div>
+                <div>
+                    <button>登录</button>
+                </div>
+            </div>
+            <div slot="slot2">
+                <p>到底了</p>
+            </div>
+        </my-dialog>
+    </div>
+    <template id="temp">
+        <div class="dialog-mask">
+            <div class="dialog-box">
+                <div class="dialog-title">
+                    {{title}}
+                    <span class="close" @click="close">[X]</span>
+                </div>
+                <div>
+                    <slot name="slot1"></slot>
+                </div>
+                <div>
+                    <slot name="slot2"></slot>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                isShow: false
+            },
+            methods: {
+                login() {
+                    this.isShow = true;
+                },
+                fn(){
+                    this.isShow = false;
+                }
+            },
+            components: {
+                'my-dialog': {
+                    template: "#temp",
+                    props: ['title'],
+                    data() {
+                        return {
+
+                        }
+                    },
+                    methods:{
+                        close(){
+                            this.$emit('close');
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
