@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class Count extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    num1:0,
+                    num2:100
+                }
+            }
+            render(){
+                let {num1,num2} = this.state;
+                return (
+                    <div>
+                        <h2>{num1}----{num2}</h2>
+                        <button onClick={() => {
+                            // 修改state用setState()
+                            this.setState({
+                                num1:num1+1
+                            })
+                        }}>click</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Count/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
